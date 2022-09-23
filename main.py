@@ -21,6 +21,7 @@ template_id = os.environ["TEMPLATE_ID"]
 def get_weather():
   console.log(city)
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
+  console.log(url)
   res = requests.get(url).json()
   weather = res['data']['list'][0]
   return weather['weather'], math.floor(weather['temp'])
